@@ -11,23 +11,70 @@
   --grey--light: rgba(255, 251, 251, 0.35);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #1b1b1b;
 }
 
+.swiper_container {
+  position: relative;
+}
+
+.swiper_container .swiper-button-prev,
+.project_container .swiper-button-prev {
+  color: var(--white2);
+  left: 10px;
+}
+
+.swiper_container .swiper-button-next,
+.project_container .swiper-button-next {
+  color: var(--white2);
+  right: 10px;
+}
+
+.swiper_container .swiper-button-prev:hover,
+.swiper_container .swiper-button-next:hover,
+.project_container .swiper-button-prev:hover,
+.project_container .swiper-button-next:hover {
+  color: #ff9505;
+}
+
+
+@media screen and (max-width: 640px) {
+  .swiper_container .swiper-button-prev,
+  .swiper_container .swiper-button-next,
+  .project_container .swiper-button-prev,
+  .project_container .swiper-button-next {
+    scale: 0.6;
+  }
+}
+
+.swiper-wrapper{
+  padding-bottom: 40px;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #ff9505;
+  opacity: 1;
+}
+
+span.swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+}
 
 
 @layer base {
   li {
-    @apply  md:p-5 md:pt-8 lg:p-8 text-xl font-semibold text-white
+    @apply  text-xl font-semibold text-white
   }
 
   button {
-    @apply text-black bg-white py-3 px-6 rounded-md font-semibold text-xl
+    @apply text-zinc-900 py-3 px-6 rounded-lg font-semibold text-[14px] 
+    leading-tight bg-neutral-50
   }
 
-  .arrow {
-    @apply absolute text-2xl text-white cursor-pointer bg-[var(--bloe)] h-full 
-  }
-  
 }

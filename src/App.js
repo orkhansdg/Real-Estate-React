@@ -1,17 +1,17 @@
-import Buttons from "./components/Buttons";
-import Hero from "./components/Hero";
-import Houses from "./components/Houses";
-import Navbar from "./components/Navbar";
+import Details from "./pages/Details";
+import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <Buttons/>
-      <Houses/>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/details/:id" element={<Details/>}/>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
